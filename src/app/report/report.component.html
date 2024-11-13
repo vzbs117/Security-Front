@@ -1,0 +1,49 @@
+<div class="report-container">
+    <h1>Reporte de Análisis de Patrones de Delitos Cibernéticos</h1>
+  
+    <!-- Filtros -->
+    <div class="filters">
+      <label for="date-range">Rango de Fecha:</label>
+      <input type="date" id="start-date" name="start-date">
+      <input type="date" id="end-date" name="end-date">
+  
+      <label for="type">Tipo de Delito:</label>
+      <select id="type" name="type">
+        <option value="all">Todos</option>
+        <option value="fraud">Fraude</option>
+        <option value="extortion">Extorsión</option>
+        <option value="identity-theft">Robo de Identidad</option>
+      </select>
+      <button (click)="applyFilters()">Aplicar Filtros</button>
+    </div>
+  
+    <!-- Tabla de Resultados -->
+    <div class="results">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Tipo de Delito</th>
+            <th>Detalles</th>
+            <th>Nivel de Riesgo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let report of filteredReports">
+            <td>{{ report.date }}</td>
+            <td>{{ report.type }}</td>
+            <td>{{ report.details }}</td>
+            <td>{{ report.riskLevel }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Sección de Gráficos -->
+    <div class="charts">
+      <h2>Tendencias y Patrones Detectados</h2>
+      <!-- Aquí puedes agregar gráficos usando una biblioteca como Chart.js -->
+      <canvas id="reportChart"></canvas>
+    </div>
+  </div>
+  

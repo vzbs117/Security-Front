@@ -1,0 +1,85 @@
+/* Estilos para la barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #005f9e; /* Azul más suave */
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombra */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo del logo (nombre de la marca) */
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* Estilos para los enlaces del menú */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-links li a:hover,
+.navbar-links li a.active {
+  background-color: #004080; /* Azul más oscuro para el hover */
+  color: #f0f8ff; /* Color claro en hover */
+}
+
+/* Estilos para el botón hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: rotate(90deg); /* Efecto de rotación en hover */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #005f9e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 60px 20px 20px 20px; /* Para dejar espacio al menú hamburguesa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

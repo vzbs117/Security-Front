@@ -1,0 +1,87 @@
+/* Contenedor principal para centrar en el centro de la pantalla */
+.register-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+/* Contenedor del formulario */
+.register-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  border: 1px solid #cce7ff;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 64, 128, 0.2);
+}
+
+/* Título */
+h2 {
+  text-align: center;
+  color: #003366;
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+/* Estilos de cada campo */
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #004080;
+  font-size: 1em;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #b3d1ff;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #003366;
+  font-size: 1em;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3399ff;
+  box-shadow: 0 0 5px rgba(51, 153, 255, 0.5);
+}
+
+/* Botón */
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+button:disabled {
+  background-color: #99ccff;
+  cursor: not-allowed;
+}
+
+/* Mensaje de error */
+.error {
+  color: #cc0000;
+  font-size: 0.85em;
+  margin-top: 5px;
+}
