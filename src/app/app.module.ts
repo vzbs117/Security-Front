@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,8 @@ import { RegisterComponent } from './register/register.component';
     AppRoutingModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()

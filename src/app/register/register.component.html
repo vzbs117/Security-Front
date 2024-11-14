@@ -1,7 +1,7 @@
 <div class="register-wrapper">
   <div class="register-container">
     <h2>Registro</h2>
-    <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    <form (ngSubmit)="onRegister()" #registerForm="ngForm">
       <div>
         <label for="name">Nombre</label>
         <input
@@ -12,7 +12,9 @@
           required
           #name="ngModel"
         />
-        <div *ngIf="name.invalid && name.touched" class="error">El nombre es requerido.</div>
+        <div *ngIf="name.invalid && name.touched" class="error">
+          El nombre es requerido.
+        </div>
       </div>
 
       <div>
@@ -26,7 +28,9 @@
           email
           #email="ngModel"
         />
-        <div *ngIf="email.invalid && email.touched" class="error">Correo electrónico no válido.</div>
+        <div *ngIf="email.invalid && email.touched" class="error">
+          Correo electrónico no válido.
+        </div>
       </div>
 
       <div>
@@ -40,7 +44,9 @@
           minlength="6"
           #password="ngModel"
         />
-        <div *ngIf="password.invalid && password.touched" class="error">La contraseña debe tener al menos 6 caracteres.</div>
+        <div *ngIf="password.invalid && password.touched" class="error">
+          La contraseña debe tener al menos 6 caracteres.
+        </div>
       </div>
 
       <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>

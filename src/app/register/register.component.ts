@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -12,9 +13,23 @@ export class RegisterComponent {
     email:'',
     password:''
   };
-  onSubmit(){
-    if(this.registerData.name&&this.registerData.email&&this.registerData.password)
-      console.log('Datos del formulario:',this.registerData);
+
+  constructor(private authService:AuthService){}
+
+  onRegister(): void{
+    this.authService.registerUser(this.registerData).subscribe(
+      response=>{
+        console.log('Usuario resgistrado con exito',response);
+      },
+      error=>{
+        console.error('Error al resgistrar el usuario:',error);
+        
+      }
+    );
   }
+
+  
+  
+ 
 
 }
