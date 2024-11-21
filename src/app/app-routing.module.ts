@@ -7,6 +7,7 @@ import { ReportComponent } from './report/report.component';
 import { ValidationComponent } from './validation/validation.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { ValidatorUrlComponent } from './validator-url/validator-url.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/login',pathMatch:'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'validation', component: ValidationComponent },
   {path:'home',component:HomeComponent},
   {path:'register',component:RegisterComponent},
+  {path:'url', component:ValidatorUrlComponent},
  
 ];
 

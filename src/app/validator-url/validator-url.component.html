@@ -1,0 +1,31 @@
+<div class="validate-url-wrapper">
+    <div class="validate-url-container">
+      <h1>Validar URL</h1>
+      <p>Ingresa una URL para verificar su formato.</p>
+  
+      <!-- Formulario de entrada -->
+      <form>
+        <div class="form-group">
+          <label for="url">URL:</label>
+          <input
+            type="text"
+            id="url"
+            [(ngModel)]="url"
+            name="url"
+            required
+            placeholder="https://example.com"
+            class="url-input"
+          />
+        </div>
+  
+        <!-- Botón de validación -->
+        <button type="button" class="validate-button" (click)="onValidate()">Validar</button>
+      </form>
+  
+      <!-- Mensajes -->
+      <div *ngIf="validationMessage" class="validation-message">
+        {{ validationMessage }}
+      </div>
+    </div>
+  </div>
+  
