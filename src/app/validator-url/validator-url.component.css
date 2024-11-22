@@ -78,4 +78,28 @@
     color: #005eff;
     border: 1px solid #005eff;
   }
-  
+  /* Spinner de carga */
+.loading-spinner {
+  margin: 20px auto;
+  border: 4px solid rgba(0, 0, 255, 0.2);
+  border-top: 4px solid #005eff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Deshabilitar el botón cuando está cargando */
+.validate-button:disabled {
+  background: #aac4ff;
+  cursor: not-allowed;
+}

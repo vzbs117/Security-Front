@@ -3,32 +3,33 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-validator-url',
   templateUrl: './validator-url.component.html',
-  styleUrl: './validator-url.component.css'
+  styleUrls: ['./validator-url.component.css'], // Corregido (de styleUrl a styleUrls)
 })
 export class ValidatorUrlComponent {
-
+  isLoading: boolean = false;
   url: string = ''; // Modelo enlazado al campo de entrada
   validationMessage: string | null = null; // Mensaje de validación
 
+  constructor() {}
 
-  constructor(){}
-
-  onValidate(): void{
-    const urlPattern = new RegExp(
-      '^(https?:\\/\\/)?' + // Protocolo (http o https)
-      '((([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,})|' + // Dominio
-      'localhost|' + // Localhost
-      '((\\d{1,3}\\.){3}\\d{1,3}))' + // Dirección IP
-      '(\\:\\d+)?(\\/[-a-zA-Z0-9@:%_+.~#?&//=]*)?$' // Puerto y/o ruta
-    );
-
-    if (this.url.trim() === '') {
-      this.validationMessage = 'Por favor, ingresa una URL.';
-    } else if (urlPattern.test(this.url)) {
-      this.validationMessage = '✅ La URL ingresada es válida.';
-    } else {
-      this.validationMessage = '❌ La URL ingresada no es válida. Verifica el formato.';
+  onValidate(): void {
+    if (!this.url) {
+      this.validationMessage = 'Por favor, ingresa una URL válida.';
+      return;
     }
-  }
 
+    this.isLoading = true;
+    this.validationMessage = null;
+
+    // Simulación de tiempo de validación (simula backend)
+    setTimeout(() => {
+      this.isLoading = false;
+
+      // Ejemplo: Resultado de validación
+      const isPhishing = Math.random() > 0.5;
+      this.validationMessage = isPhishing
+        ? 'La URL podría ser peligrosa. ¡Ten cuidado!'
+        : 'La URL parece segura.';
+    }, 3000);
+  }
 }

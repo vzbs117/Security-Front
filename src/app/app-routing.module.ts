@@ -8,9 +8,11 @@ import { ValidationComponent } from './validation/validation.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ValidatorUrlComponent } from './validator-url/validator-url.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'/login',pathMatch:'full'},
+  {path:'', redirectTo:'/inicio',pathMatch:'full'},
+  {path:'inicio',component:InicioComponent},
   {path:'login',component:LoginComponent},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },

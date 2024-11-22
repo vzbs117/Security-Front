@@ -17,6 +17,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ValidatorUrlComponent } from './validator-url/validator-url.component';
+import { InicioComponent } from './inicio/inicio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { ValidatorUrlComponent } from './validator-url/validator-url.component';
     HomeComponent,
     NavbarComponent,
     RegisterComponent,
-    ValidatorUrlComponent
+    ValidatorUrlComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
