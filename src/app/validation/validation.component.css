@@ -1,51 +1,88 @@
 .validation-container {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-  
-  h1 {
-    color: #2c3e50;
-  }
-  
-  .detected-patterns table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .detected-patterns th, .detected-patterns td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  .detected-patterns th {
-    background-color: #3498db;
-    color: white;
-  }
-  
-  button {
-    padding: 5px 10px;
-    margin-right: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:first-child {
-    background-color: #27ae60;
-    color: white;
-  }
-  
-  button:last-child {
-    background-color: #e74c3c;
-    color: white;
-  }
-  
-  input[type="text"] {
-    width: 100%;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.detected-patterns table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.95em;
+}
+
+.detected-patterns th,
+.detected-patterns td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.detected-patterns th {
+  background-color: #3498db;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.detected-patterns tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.detected-patterns tr:hover {
+  background-color: #eaf6ff;
+}
+
+button {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:first-child {
+  background-color: #27ae60;
+  color: white;
+}
+
+button:first-child:hover {
+  background-color: #219653;
+  transform: scale(1.05);
+}
+
+button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+button:last-child:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 0.9em;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #3498db;
+  outline: none;
+}

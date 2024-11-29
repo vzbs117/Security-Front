@@ -1,33 +1,44 @@
-/* Contenedor principal para centrar en el centro de la pantalla */
+/* Contenedor principal centrado */
 .login-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #f0f8ff;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
   padding: 20px;
 }
 
 /* Contenedor del formulario */
 .login-container {
-  max-width: 600px;
+  max-width: 400px;
   width: 100%;
   padding: 40px;
   background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 64, 128, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estilo del encabezado */
-.login-header {
-  color: #1e88e5; /* Azul */
-  margin-bottom: 25px;
-  font-size: 2em;
-  font-weight: bold;
+.login-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo de cada campo */
+/* Encabezado */
+.login-header h2 {
+  font-size: 1.8em;
+  color: #1976d2;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.login-header p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* Campos del formulario */
 .form-group {
   margin-bottom: 20px;
   text-align: left;
@@ -35,67 +46,99 @@
 
 .form-group label {
   display: block;
-  font-size: 14px;
-  color: #666;
-  font-weight: bold;
+  font-size: 0.95em;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .form-group input {
   width: 100%;
   padding: 12px;
-  border: 1px solid #b3d1ff;
-  border-radius: 6px;
-  background-color: #ffffff;
-  color: #003366;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   font-size: 1em;
+  color: #555;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: #3399ff;
-  box-shadow: 0 0 5px rgba(51, 153, 255, 0.5);
+  border-color: #42a5f5;
+  box-shadow: 0 0 8px rgba(66, 165, 245, 0.5);
 }
 
 /* Botón de inicio de sesión */
 .login-button {
-  background-color: #1e88e5;
-  color: white;
-  padding: 12px 20px;
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  color: #ffffff;
+  padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 1.1em;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
   width: 100%;
-  transition: background-color 0.3s;
 }
 
 .login-button:hover {
-  background-color: #1565c0; /* Azul más oscuro */
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+  transform: translateY(-3px);
 }
 
 .login-button:disabled {
-  background-color: #99ccff;
+  background: #b3d1ff;
   cursor: not-allowed;
 }
 
 /* Enlace de registro */
 .signup-link {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 0.95em;
+  color: #555;
 }
 
 .signup-link a {
   color: #1e88e5;
+  font-weight: 600;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .signup-link a:hover {
+  color: #0d47a1;
   text-decoration: underline;
 }
 
 /* Mensaje de error */
 .error-message {
-  color: #cc0000;
-  font-size: 0.85em;
-  margin-top: 5px;
+  color: #d32f2f;
+  background: #ffebee;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Responsividad */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+  }
+
+  .login-header h2 {
+    font-size: 1.5em;
+  }
+
+  .form-group input {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .login-button {
+    font-size: 1em;
+  }
 }

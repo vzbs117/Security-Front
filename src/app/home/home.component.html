@@ -1,28 +1,27 @@
 <div class="home-container">
-    <h1>Bienvenido al Sistema de Detección de Patrones</h1>
-    <p>Hola, {{ userName }}. Aquí tienes un resumen de las actividades recientes.</p>
-  
-    <!-- Sección de Resumen de Actividades -->
-    <div class="activity-summary">
-      <div class="card">
-        <h2>Patrones Detectados</h2>
-        <p>{{ detectedPatterns }} en los últimos 7 días</p>
-      </div>
-      <div class="card">
-        <h2>Alertas Pendientes</h2>
-        <p>{{ pendingAlerts }} pendientes</p>
-      </div>
-      <div class="card">
-        <h2>Patrones Validados</h2>
-        <p>{{ validatedPatterns }} este mes</p>
-      </div>
+  <h1>Bienvenido al Sistema de Detección de Patrones</h1>
+  <p class="welcome-message">Hola, {{ userName }}. Aquí tienes un resumen de las actividades recientes.</p>
+
+  <!-- Sección de Resumen de Actividades -->
+  <div class="activity-summary">
+    <div class="card">
+      <h2>Patrones Detectados</h2>
+      <p>{{ detectedPatterns }} en los últimos 7 días</p>
     </div>
-  
-    <!-- Enlaces Rápidos -->
-    <div class="quick-links">
-      <a routerLink="/validation" class="quick-link">Validación de Patrones</a>
-      <a routerLink="/reports" class="quick-link">Generar Reportes</a>
-      <a routerLink="/profile" class="quick-link">Ver Perfil</a>
+    <div class="card">
+      <h2>Alertas Pendientes</h2>
+      <p>{{ pendingAlerts }} pendientes</p>
+    </div>
+    <div class="card">
+      <h2>Patrones Validados</h2>
+      <p>{{ validatedPatterns }} este mes</p>
     </div>
   </div>
-  
+
+  <!-- Enlaces Rápidos -->
+  <div class="quick-links">
+    <a routerLink="/validation" class="quick-link">Validación de Patrones</a>
+    <a routerLink="/reports" class="quick-link">Generar Reportes</a>
+    <a routerLink="/profile" class="quick-link">Ver Perfil</a>
+  </div>
+</div>

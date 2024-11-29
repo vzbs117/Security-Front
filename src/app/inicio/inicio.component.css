@@ -1,112 +1,156 @@
+/* Estilo general */
 .inicio-container {
-    font-family: Arial, sans-serif;
-    color: #333;
-    padding: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  .header h1 {
-    font-size: 2.5em;
-    color: #2c3e50;
-    margin-bottom: 10px;
-  }
-  
-  .header p {
-    font-size: 1.2em;
-    color: #7f8c8d;
-  }
-  
+  font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+  color: #2c3e50;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header h1 {
+  font-size: 2.8em;
+  font-weight: 600;
+  color: #2980b9;
+  margin-bottom: 15px;
+}
+
+.header p {
+  font-size: 1.3em;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Tarjetas */
+.card {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 20px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.text {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h2 {
+  font-size: 2em;
+  color: #3498db;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Lista */
+ul {
+  list-style-type: square;
+  padding-left: 25px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* Vista previa de datos */
+.data-preview {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-style: italic;
+  color: #7f8c8d;
+  font-size: 1em;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Pie de página */
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.9em;
+  color: #7f8c8d;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
   .card {
-    display: flex;
-    flex-direction: row;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px 0;
-  }
-  
-  .content {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-  
-  .text {
-    flex: 1;
-    padding-right: 20px;
-  }
-  
-  .image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  h2 {
-    color: #2980b9;
-    font-size: 1.8em;
-    margin-bottom: 15px;
-  }
-  
-  p {
-    font-size: 1.1em;
-    line-height: 1.6;
-  }
-  
-  ul {
-    list-style-type: square;
-    padding-left: 20px;
-    font-size: 1.1em;
-  }
-  
-  .data-preview {
-    background-color: #f2f2f2;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    font-style: italic;
-    color: #7f8c8d;
-    font-size: 1em;
-    margin-top: 20px;
-  }
-  
-  .footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9em;
-    color: #7f8c8d;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-  }
-  
-  /* Ajustes para dispositivos pequeños */
-  @media (max-width: 768px) {
-    .card {
       flex-direction: column;
-    }
-  
-    .text, .image {
-      flex: none;
+      padding: 20px;
+  }
+
+  .text, .image {
       width: 100%;
       padding-right: 0;
-    }
-  
-    .image img {
-      width: 100%;
-    }
   }
-  
+
+  .image img {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+      font-size: 2em;
+  }
+
+  .header p {
+      font-size: 1em;
+  }
+
+  h2 {
+      font-size: 1.5em;
+  }
+
+  p {
+      font-size: 1em;
+  }
+}

@@ -1,80 +1,88 @@
-/* Contenedor principal para centrar en el centro de la pantalla */
+/* Contenedor principal */
 .register-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #ffffff;
+  background: linear-gradient(120deg, #e0f7fa, #ffffff);
   padding: 20px;
 }
 
 /* Contenedor del formulario */
 .register-container {
-  max-width: 600px;
+  max-width: 450px;
   width: 100%;
-  padding: 30px;
-  border: 1px solid #cce7ff;
+  padding: 40px;
   border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 64, 128, 0.2);
+  background: linear-gradient(145deg, #f0f4f9, #ffffff);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Título */
+/* Título y descripción */
 h2 {
-  text-align: center;
-  color: #003366;
-  font-size: 2em;
+  font-size: 2.2em;
+  color: #0077cc;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1em;
+  color: #666666;
   margin-bottom: 25px;
 }
 
-/* Estilos de cada campo */
-form div {
+/* Estilo de los campos */
+.form-group {
   margin-bottom: 20px;
+  text-align: left;
 }
 
 label {
-  display: block;
+  font-size: 1em;
+  color: #004080;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #004080;
-  font-size: 1em;
 }
 
 input {
   width: 100%;
   padding: 12px;
-  border: 1px solid #b3d1ff;
-  border-radius: 6px;
-  background-color: #ffffff;
-  color: #003366;
+  border: 1px solid #cce7ff;
+  border-radius: 8px;
+  background-color: #f9f9f9;
   font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus {
   outline: none;
-  border-color: #3399ff;
-  box-shadow: 0 0 5px rgba(51, 153, 255, 0.5);
+  border-color: #0077cc;
+  box-shadow: 0 0 8px rgba(0, 119, 204, 0.3);
 }
 
-/* Botón */
-button {
+/* Botón de registro */
+.register-button {
   width: 100%;
   padding: 15px;
-  background-color: #0066cc;
+  background: linear-gradient(90deg, #0077cc, #0056a3);
   color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  font-size: 1.2em;
   font-weight: bold;
-  font-size: 1.1em;
-  transition: background-color 0.3s ease;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
-button:hover {
-  background-color: #005bb5;
+.register-button:hover {
+  background: linear-gradient(90deg, #0056a3, #004080);
+  transform: scale(1.02);
 }
 
-button:disabled {
+.register-button:disabled {
   background-color: #99ccff;
   cursor: not-allowed;
 }
@@ -82,6 +90,25 @@ button:disabled {
 /* Mensaje de error */
 .error {
   color: #cc0000;
-  font-size: 0.85em;
+  font-size: 0.9em;
   margin-top: 5px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  input {
+    font-size: 0.9em;
+  }
+
+  .register-button {
+    font-size: 1em;
+  }
 }
