@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.email, this.password).subscribe(
       (response) => {
         // Guardar el token o redirigir al usuario
-        this.router.navigate(['/dashboard']); // Redirigir a la página deseada después de iniciar sesión
+        this.router.navigate(['/profile']); // Redirigir a la página deseada después de iniciar sesión
       },
       (error) => {
         // Manejar el error

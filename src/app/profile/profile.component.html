@@ -1,14 +1,22 @@
 <div class="profile-container">
-    <div class="profile-header">
-      <h2>Perfil del Usuario</h2>
-      <p>Información de tu cuenta</p>
-    </div>
-    <div class="profile-content">
-      <img class="profile-picture" src="assets/user-avatar.png" alt="Foto de perfil">
-      <h3>Nombre del Usuario</h3>
-      <p>Correo: usuario</p>
-      <p>Rol: Invitado / Administrador</p>
-    </div>
-    <button class="edit-button">Editar Perfil</button>
+  <div class="profile-header">
+    <h2>Perfil del Usuario</h2>
+    <p>Información de tu cuenta</p>
   </div>
   
+  <div class="profile-content">
+    <!-- Mostrar imagen de perfil. Si no tiene, usar una imagen predeterminada -->
+    <img class="profile-picture" [src]="userProfile?.profileImage || 'assets/user-avatar.png'" alt="Foto de perfil">
+    
+    <!-- Mostrar nombre de usuario -->
+    <h3>{{ userProfile?.username || 'Usuario no disponible' }}</h3>  
+    
+    <!-- Mostrar correo electrónico -->
+    <p>Correo: {{ userProfile?.email || 'Correo no disponible' }}</p>  
+    
+    <!-- Mostrar rol del usuario, por defecto 'Invitado' -->
+    <p>Rol: {{ userProfile?.role || 'Invitado' }}</p> 
+  </div>
+
+  <button class="edit-button">Editar Perfil</button>
+</div>
