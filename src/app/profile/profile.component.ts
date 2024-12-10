@@ -4,20 +4,25 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css'
+  styleUrls: ['./profile.component.css'],  // Arreglo 'styleUrls' con la "s" en plural
 })
 export class ProfileComponent implements OnInit {
-  userProfile: any = null;   // Datos del perfil del usuario
-  loading: boolean = true;    // Indicador de carga
-  error: string | null = null;  // Mensaje de error en caso de fallo
+  userProfile: any = null;  // Datos del perfil del usuario
+  loading: boolean = true;   // Indicador de carga
+  error: string | null = null; // Mensaje de error en caso de fallo
 
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.getUserProfile().subscribe(
+    // Nos suscribimos al BehaviorSubject para obtener el perfil del usuario
+    this.authService.userProfile.subscribe(
       (data) => {
-        this.userProfile = data;  // Asignamos los datos del perfil
-        this.loading = false;      // Terminamos la carga
+        if (data) {
+          this.userProfile = data;  // Asignamos los datos del perfil
+        } else {
+          this.error = 'Perfil no encontrado. Por favor, intenta nuevamente más tarde.';
+        }
+        this.loading = false;  // Terminamos la carga
       },
       (error) => {
         console.error('Error al obtener el perfil del usuario', error);
@@ -26,6 +31,4 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
-
-
 }

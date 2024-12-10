@@ -2,6 +2,16 @@
   <div class="register-container">
     <h2>Crear Cuenta</h2>
     <p>Por favor, llena los campos para registrarte</p>
+
+    <!-- Indicador de carga -->
+    <div *ngIf="loading" class="loading">Cargando...</div>
+
+    <!-- Mensaje de éxito -->
+    <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+
+    <!-- Mensaje de error -->
+    <div *ngIf="error" class="error">{{ error }}</div>
+
     <form (ngSubmit)="onRegister()" #registerForm="ngForm">
       <div class="form-group">
         <label for="name">Nombre</label>
@@ -9,7 +19,7 @@
           type="text"
           id="name"
           name="name"
-          [(ngModel)]="registerData.name"
+          [(ngModel)]="registerData.nombre"
           required
           #name="ngModel"
         />
@@ -50,7 +60,7 @@
         </div>
       </div>
 
-      <button type="submit" [disabled]="registerForm.invalid" class="register-button">
+      <button type="submit" [disabled]="registerForm.invalid || loading" class="register-button">
         Registrarse
       </button>
     </form>
