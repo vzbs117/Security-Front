@@ -1,25 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UrlValidatorService } from '../services/url-validator.service';
+
 
 @Component({
   selector: 'app-validation',
   templateUrl: './validation.component.html',
   styleUrl: './validation.component.css'
 })
-export class ValidationComponent {
-  patterns = [
-    { id: '1', description: 'Intento de fraude detectado', date: '2024-11-01', comment: '' },
-    { id: '2', description: 'Acceso no autorizado', date: '2024-11-02', comment: '' },
-    { id: '3', description: 'Amenaza de extorsión detectada', date: '2024-11-03', comment: '' }
-  ];
+export class ValidationComponent implements OnInit {
 
-  validatePattern(id: string) {
-    // Lógica para validar el patrón
-    console.log(`Patrón ${id} validado`);
-  }
+  patterns: any[]=[];
+  constructor(private urlValidation: UrlValidatorService){}
 
-  rejectPattern(id: string) {
-    // Lógica para rechazar el patrón
-    console.log(`Patrón ${id} rechazado`);
+  ngOnInit(): void {
+      this.urlValidation.getUrls().subscribe((data)=>{
+        this.patterns=data;
+      });
   }
+  
 
 }

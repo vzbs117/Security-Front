@@ -1,33 +1,22 @@
 <div class="validation-container">
-    <h1>Validación de Patrones Detectados</h1>
-  
-    <!-- Tabla de Patrones Detectados -->
-    <div class="detected-patterns">
-      <table>
-        <thead>
-          <tr>
-            <th>ID del Patrón</th>
-            <th>Descripción</th>
-            <th>Fecha de Detección</th>
-            <th>Acción</th>
-            <th>Comentarios</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let pattern of patterns">
-            <td>{{ pattern.id }}</td>
-            <td>{{ pattern.description }}</td>
-            <td>{{ pattern.date }}</td>
-            <td>
-              <button (click)="validatePattern(pattern.id)">Validar</button>
-              <button (click)="rejectPattern(pattern.id)">Rechazar</button>
-            </td>
-            <td>
-              <input type="text" placeholder="Agregar comentario" [(ngModel)]="pattern.comment">
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <h1>Validación de Patrones Detectados</h1>
+
+  <div class="detected-patterns">
+    <table>
+      <thead>
+        <tr>
+          <th>URL</th>
+          <th>Estado</th>
+          <th>Fecha de Detección</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pattern of patterns">
+          <td>{{ pattern.url }}</td>
+          <td>{{ pattern.status }}</td>
+          <td>{{ pattern.date | date: 'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  
+</div>

@@ -6,12 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UrlValidatorService {
-  private apiUrl = 'http://localhost:5000/api/consultar'; // URL de la API backend
+  private apiUrl = 'http://localhost:5000/api'; // URL de la API backend
 
   constructor(private http: HttpClient) {}
 
   // Método para validar la URL
   validateUrl(url: string): Observable<any> {
-    return this.http.post<any>(this.apiUrl, { url });
+    return this.http.post<any>(`${this.apiUrl}/consultar`, { url });
+  }
+
+  // Método para obtener todas las URLs almacenadas
+  getUrls(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/urls`);
   }
 }
